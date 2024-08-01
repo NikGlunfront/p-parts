@@ -1,0 +1,47 @@
+@mixin mq ($breakpoint) {
+    @if $breakpoint==1200 {
+        @media only screen and (max-width: 1200px) {
+            @content;
+        }
+    }
+    @if $breakpoint==992 {
+        @media only screen and (max-width: 992px) {
+            @content;
+        }
+    }
+    @if $breakpoint==768 {
+        @media only screen and (max-width: 768px) {
+            @content;
+        }
+    }
+    @if $breakpoint==576 {
+        @media only screen and (max-width: 576px) {
+            @content;
+        }
+    }
+}
+
+@mixin flex_row {
+    display: flex;
+}
+@mixin flex_col {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin font($font_name, $file_name, $weight, $style) {
+
+    @font-face {
+    font-family: $font_name;
+    font-display: swap;
+    src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+    font-weight: #{$weight};
+    font-style: #{$style};
+    }
+}
+
+@mixin hover {
+    @media screen and (min-width: 993px) {
+        @content;
+    }
+}

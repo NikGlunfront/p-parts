@@ -1,0 +1,29 @@
+// PreBuild
+@import './utils/mixins';
+@import './utils/utils';
+@import './utils/reset';
+@import './utils/fonts';
+
+html {
+    font-size: 62.5%;
+}
+body {
+    background-color: $white_c;
+    font-size: 1.6rem;
+    color: $black_c;
+    font-family: $font;
+}
+.footer {
+    margin: auto 0;
+}
+.page-wrapper {
+    @include flex_col;
+    overflow-x: hidden;
+}
+
+// Common components
+@import './common/_header';
+@import './common/_footer';
+
+// Главная страница
+@import './index-page/index-page.scss';

@@ -1,0 +1,16 @@
+$white_c: #fff;
+$black_c: #000;
+$font: "Inter";
+$maxWidth: 1390px;
+
+.container {
+    width: 100%;
+    max-width: calc($maxWidth + 30px * 2);
+    padding: 0 30px;
+    margin: 0 auto;
+
+    @include mq(576) {
+        padding: 0 15px;
+    }
+}
+
