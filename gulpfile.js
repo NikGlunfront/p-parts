@@ -17,7 +17,7 @@ let path = {
         css: source_folder + "/scss/style.scss",
         js: source_folder + "/js/*.js",
         img: source_folder + "/img/**/*.+(jpg|png|svg|gif|ico|webp)",
-        fonts: source_folder + "/fonts/*.ttf",
+        fonts: source_folder + "/fonts/*.woff2",
     },
     watch: {
         html: source_folder + "/**/*.html",
@@ -53,7 +53,7 @@ function browserSync(params) {
         server: {
             baseDir: "./" + project_folder + "/"
         },
-        port: 3000,
+        port: 3978,
         notify: false
     })
 }
@@ -135,10 +135,10 @@ function images() {
 
 function fonts(params) {
     src(path.src.fonts)
-        .pipe(ttf2woff())
+        // .pipe(ttf2woff())
         .pipe(dest(path.build.fonts));
     return src(path.src.fonts)
-        .pipe(ttf2woff2())
+        // .pipe(ttf2woff2())
         .pipe(dest(path.build.fonts));
 }
 

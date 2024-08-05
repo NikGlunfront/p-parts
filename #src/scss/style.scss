@@ -9,21 +9,27 @@ html {
 }
 body {
     background-color: $white_c;
-    font-size: 1.6rem;
+    font-size: 16px;
+    line-height: 1.3;
     color: $black_c;
     font-family: $font;
+    min-height: 100%;
 }
 .footer {
-    margin: auto 0;
+    margin: auto 0 0;
 }
 .page-wrapper {
     @include flex_col;
-    overflow-x: hidden;
+    // overflow-x: hidden;
+    padding-top: 140px;
+    min-height: 100%;
 }
 
 // Common components
 @import './common/_header';
 @import './common/_footer';
+@import './common/common';
 
 // Главная страница
-@import './index-page/index-page.scss';
+@import './pages/home.scss';
+@import './pages/product.scss';

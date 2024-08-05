@@ -1,0 +1,195 @@
+.section {
+    margin-bottom: 80px;
+
+    @include mq(992) {
+        margin-bottom: 40px;
+    }
+
+    &__title {
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 1;
+        margin-bottom: 16px;
+        @include flex_row;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 32px;
+
+        @include mq(992) {
+            font-size: 24px;
+            margin-bottom: 24px;
+        }
+
+        & > a {
+            @include flex_row;
+            align-items: center;
+            justify-content: center;
+            color: $black_c;
+            padding: 0 15px;
+            line-height: 38px;
+            font-size: 15px;
+            background-color: #e7faf9;
+            border: 1px solid transparent;
+            transition: $transition;
+
+            @include hover {
+                border-color: $black_c;
+                &::after {
+                    margin-left: 30px;
+                }
+            }
+
+            &::after {
+                content: "\2192";
+                margin-left: 10px;
+                transition: $transition;
+            }
+        }
+    }
+    
+    &__subtitle {
+        color: #605f5f;
+        flex: 0 0 100%;
+        font-size: 15px;
+        line-height: 1.2;
+        margin-top: 16px;
+        font-weight: 400;
+
+        @include mq(992) {
+            font-size: 15px;
+            margin-top: 10px;
+        }
+    }
+
+    &__content {
+        font-size: 17px;
+        margin-bottom: 80px;
+
+        @include mq(992) {
+            margin-bottom: 40px;
+        }
+
+        p {
+            padding-bottom: 24px;
+        }
+
+        & > img {
+            width: 100%;
+            object-fit: contain;
+            margin: 20px 0;
+        }
+
+        &._img_right,
+        &._img_left {
+            @include flex_row;
+            justify-content: space-between;
+            
+            img {
+                flex: 0 0 50%;
+                max-width: 720px;
+                object-fit: contain;
+                margin: 0 0 20px 20px;
+            }
+
+            & > div {
+                flex: 0 0 calc(50% - 20px);
+            }
+        }
+
+        &._img_left {
+            img  {
+                order: -1;
+                margin: 0 20px 20px 0;
+            }
+        }
+        &._img_right {
+            img  {
+                order: 2;
+            }
+        }
+    }
+}
+
+a.pp-btn,
+button.pp-btn,
+div.pp-btn {
+    @include flex_row;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    line-height: 38px;
+    min-width: 90px;
+    padding: 0 15px;
+    border-radius: 5px;
+    border: 1px solid $teal_c;
+    color: $teal_c;
+    text-align: center;
+    
+    &._red {
+        border: 1px solid $red_c;
+        background-color: $red_c;
+        color: $white_c;
+    }
+    &._teal {
+        border: 1px solid $teal_c;
+        background-color: $teal_c;
+        color: $white_c;
+    }
+
+    &._cart {
+        line-height: 48px;
+        font-size: 19px;
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-image: url('../../img/icons/add-to-cart.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin-right: 10px;
+        }
+    }
+}
+
+.page-title {
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 60px;
+
+    @include mq(992) {
+        margin-bottom: 40px;
+        font-size: 28px;
+    }
+}
+
+.breadcrumbs {
+    margin-top: 60px;
+    margin-bottom: 30px;
+    @include mq(992) {
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    &__row {
+        @include flex_row;
+        flex-wrap: wrap;
+
+        a, span {
+            display: block;
+            font-size: 15px;
+            margin-right: 7px;
+        }
+        a {
+            &::after {
+                content: "/";
+                margin-left: 7px;
+            }
+        }
+
+        span {
+            color: #a19d9d;
+        }
+    }
+}

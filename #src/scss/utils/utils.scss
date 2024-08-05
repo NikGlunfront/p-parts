@@ -1,11 +1,14 @@
 $white_c: #fff;
+$teal_c: #17d1c6;
+$red_c: #e42902;
 $black_c: #000;
-$font: "Inter";
+$font: "MuseoSansCyrl";
 $maxWidth: 1390px;
+$transition: all 0.2s linear;
 
-.container {
+.container, .page-title {
     width: 100%;
-    max-width: calc($maxWidth + 30px * 2);
+    max-width: 1682px;
     padding: 0 30px;
     margin: 0 auto;
 

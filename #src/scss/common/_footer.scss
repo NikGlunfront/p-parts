@@ -1,3 +1,116 @@
-h1 {
-    font-size: 40px;
+.footer {
+    background-color: #0a152f;
+    padding: 80px 0;
+    color: $white_c;
+
+    @include mq(992) {
+        padding: 40px 0;
+    }
+
+    &__content {
+        @include flex_row;
+
+        @include mq(992) {
+            flex-wrap: wrap;
+        }
+    }
+}
+
+.col-footer {
+    padding-left: 10px;
+    margin-right: 40px;
+    margin-left: auto;
+
+    
+    &:first-child {
+        margin-left: 0;
+    }
+    @include mq(992) {
+        flex: 0 0 100%;
+        margin-bottom: 30px;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    
+    &:last-child {
+        text-align: end;
+    }
+
+    &__title {
+        position: relative;
+        font-size: 17px;
+        min-height: 30px;
+        margin-bottom: 40px;
+
+        @include mq(992) {
+            margin-bottom: 20px;
+            min-height: 0;
+        }
+
+        span {
+            position: relative;
+            display: block;
+            height: 100%;
+            &::before {
+                content: "";
+                position: absolute;
+                width: 3px;
+                height: 100%;
+                background-color: $teal_c;
+                left: -12px;
+                top: 0;
+            }
+        }
+
+    }
+    &._last {
+        text-align: end;
+        margin-left: auto;
+
+        @include mq(992) {
+            text-align: start;
+            margin-left: 0;
+        }
+
+        .col-footer__title {
+            span {
+                padding-right: 10px;
+                &::before {
+                    right: 0;
+                    left: unset;
+
+                    @include mq(992) {
+                        left: -12px;
+                        right: unset;
+                    }
+                }
+            }
+        }
+    }
+
+    &__content {
+        font-size: 13px;
+
+        a {
+            display: block;
+            margin-bottom: 16px;
+
+            @include hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__phone {
+        font-size: 18px;
+        white-space: nowrap;
+
+        &._wapp {
+            padding-left: 40px;
+            background-image: url('../../img/icons/wapp.png');
+            background-repeat: no-repeat;
+            background-size: 20px 20px;
+            background-position: left center;
+        }
+    }
 }

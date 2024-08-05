@@ -1,0 +1,388 @@
+.intro {
+
+    &__content {
+    }
+
+    &__main {
+        height: 318px;
+        @include flex_col;
+        background-image: url('../../img/home/intro.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: right center;
+    }
+
+    &__title {
+        color: $black_c;
+        @include flex_col;
+        justify-content: center;
+        text-align: center;
+        height: 318px;
+        max-width: 400px;
+
+        @include mq(992) {
+            max-width: 100%;
+        }
+
+        a {
+            margin: 0 auto;
+        }
+
+        span {
+            display: block;
+            font-size: 35px;
+            font-weight: 700;
+
+            @include mq(576) {
+                font-size: 24px;
+            }
+        }
+        
+        p {
+            display: block;
+            font-size: 19px;
+            margin: 20px 0;
+
+            @include mq(576) {
+                font-size: 16px;
+            }
+        }
+    }
+
+    &__bottom {
+        background-color: #0a152f;
+        padding: 30px 0;
+    }
+}
+
+.row-intro {
+    @include flex_row;
+    justify-content: space-between;
+
+    @include mq(992) {
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        @include flex_row;
+        flex: 1;
+        margin-right: 20px;
+        max-width: 335px;
+
+        @include mq(992) {
+            flex: 0 0 100%;
+            margin-right: 0;
+            margin-bottom: 30px;
+        }
+
+        @include mq(768) {
+            max-width: unset;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+    }
+    &__img {
+        margin-right: 22px;
+        width: 41px;
+        flex: 0 0 41px;
+        height: 41px;
+        border-radius: 5px;
+        background-color: $teal_c;
+        @include flex_row;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 60%;
+            height: 60%;
+            object-fit: contain
+        }
+    }
+
+    &__text {
+        span {
+            display: block;
+            color: $white_c;
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #29659b;
+        }
+    }
+}
+
+.popular-cats {
+
+    &__content {
+        @include flex_row;
+        max-width: 100%;
+        overflow-y: auto;
+        padding-bottom: 20px;
+        @include scrollBarStyle;
+    }
+
+    &__cat {
+        flex: 0 0 218px;
+        width: 218px;
+        margin-right: 16px;
+        
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &:hover > div {
+            // border-color: rgba($color: #000000, $alpha: 0.8);
+
+            img {
+                transform: translate(-50%, -50%) scale(1.03);
+            }
+        }
+        & > div {
+            width: 218px;
+            margin-bottom: 16px;
+            transition: $transition;
+            border: 1px solid transparent;
+            position: relative;
+            height: 312px;
+            overflow: hidden;
+            
+            
+            img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform-origin: center;
+                width: 100%;
+                object-fit: cover;
+                height: 100%;
+                transition: $transition;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        span {
+            text-align: center;
+            font-size: 14px;
+            display: block;
+            width: 100%;
+            line-height: 1.3;
+        }
+    }
+}
+
+.subscribe {
+    padding: 46px 0;
+    min-height: 148px;
+    background-image: url('../../img/home/subscribe.png');
+    background-position: center;
+    background-size: cover;
+
+    &__content { 
+        @include flex_row;
+        align-items: center;
+        justify-content: space-around;
+
+        @include mq(992) {
+            flex-wrap: wrap;
+        }
+    }
+    
+    &__text {
+        flex: 1;
+        max-width: 620px;
+        color: $white_c;
+        
+        @include mq(992) {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        span {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            display: block;
+            text-transform: uppercase;
+        }
+        p {
+            font-size: 13px;
+            display: block;
+        }
+    }
+
+    &__form {
+        flex: 1;
+        max-width: 620px;
+        margin-left: 40px;
+        height: 38px;
+
+        @include mq(992) {
+            flex: 0 0 100%;
+            max-width: 100%;
+            margin-left: 0;
+            margin-top: 40px;
+        }
+
+        form {
+            height: 100%;
+            background-color: $white_c;
+            border-radius: 6px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+
+            input {
+                width: 100%;
+                font-size: 13px; 
+                color: #31618d;
+                padding: 0 15px;
+                line-height: 38px;
+                padding-right: calc(125px + 20px);
+            }
+            button {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 125px;
+                border-radius: 6px;
+                background-color: #17c9c0;
+                text-align: center;
+                line-height: 38px;
+                height: 100%;
+                color: $white_c;
+            }
+        }
+    }
+}
+
+.brands {
+
+    &__content {
+        @include flex_row;
+        width: 100%;
+        overflow-y: auto;
+        @include scrollBarStyle;
+    }
+
+    &__item {
+        flex: 0 0 218px;
+        width: 218px;
+        height: 218px;
+        margin-right: 16px;
+        border: 1px solid #f1f1f1;
+        @include flex_row;
+        align-items: center;
+        justify-content: center;
+        transition: $transition;
+        &:hover {
+            border-color: rgba($color: #000000, $alpha: 0.8);
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+
+        img {
+            width: 80%;
+            height: 80%;
+            object-fit: contain;
+        }
+    }
+}
+
+.about {
+    padding: 80px 0;
+    background-color: #f1f1f2;
+    margin-bottom: 0;
+
+    @include mq(992) {
+        padding: 40px 0;
+    }
+    .section__title {
+        font-size: 36px;
+        margin-bottom: 80px;
+
+        @include mq(992) {
+            font-size: 24px;
+            margin-bottom: 40px;
+        }
+    }
+
+    &__content {
+        @include flex_row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &__item {
+        max-width: 720px;
+        flex: 0 0 calc(50% - 30px);
+        @include flex_row;
+        margin-bottom: 40px;
+
+        &:nth-child(odd) {
+            margin-right: 30px;
+        }
+
+        @include mq(992) {
+            margin-bottom: 30px;
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        img {
+            margin-right: 16px;
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+        & > div {
+            span {
+                font-size: 18px;
+                margin-bottom: 16px;
+                font-weight: 700;
+                display: block;
+            }
+            p {
+               font-size: 15px; 
+               display: block;
+            }
+        }
+
+        &._notify {
+            padding-left: 130px;
+            background-image: url('../../img/icons/notify.png');
+            background-repeat: no-repeat;
+            background-size: 80px;
+            display: block;
+            margin-top: 20px;
+
+            span {
+                font-size: 40px;
+                font-weight: 500;
+                margin-bottom: 10px;
+                display: block;
+            }
+
+            a {
+                display: block;
+                text-align: end;
+                margin-left: auto;
+                font-size: 16px;
+                color: #17d1c6;
+                text-decoration: underline;
+
+                @include mq(992) {
+                    text-align: start;
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}

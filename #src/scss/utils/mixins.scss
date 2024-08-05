@@ -21,6 +21,22 @@
     }
 }
 
+
+@mixin scrollBarStyle {
+    &::-webkit-scrollbar {
+        width: 5px;
+        height: 8px;
+        border-radius: 20px;
+        background-color: rgba($color: #aaa, $alpha: 0.3); /* or add it to the track */
+    }
+    &::-webkit-scrollbar-thumb {
+        width: 5px;
+        height: 8px;
+        border-radius: 20px;
+        background-color: rgba($color: #aaa, $alpha: 1); /* or add it to the track */
+    }
+}
+
 @mixin flex_row {
     display: flex;
 }
@@ -34,7 +50,7 @@
     @font-face {
     font-family: $font_name;
     font-display: swap;
-    src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+    src: url("../fonts/#{$file_name}.woff2") format("woff2");
     font-weight: #{$weight};
     font-style: #{$style};
     }
@@ -42,6 +58,8 @@
 
 @mixin hover {
     @media screen and (min-width: 993px) {
-        @content;
+        &:hover {
+            @content;
+        }
     }
 }
