@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    @@include('./components/common/head.html')
+    <title>IndexPage</title>
+</head>
+<body>
+    <div class="page-wrapper">
+
+        <!--header-->
+        @@include('./components/common/_header.html')
+
+        <main class="main">
+            @@include('./components/common/breadcrumbs_before.html')
+                <a href="/">Главная</a>
+                <a href="/">Послепечатное бумагорезательное</a>
+                <span>Корзина</span>
+            @@include('./components/common/breadcrumbs_after.html')
+
+            <div class="page-title">Корзина</div>
+
+            <section class="section basket-view">
+                <div class="container">
+                    <div class="basket-view__content list-basket">
+                        <div class="list-basket__items">
+                            <div class="item-basket">
+                                <a href="#" class="item-basket__img">
+                                    <img src="img/product.jpg" alt="">
+                                </a>
+                                <div class="item-basket__info">
+                                    <a href="#" class="item-basket__name">Вибростол-сталкиватель для бумаги Polar RB 2</a>
+                                    <div class="item-basket__articul">
+                                        <span>АРТИКУЛ:</span>
+                                        <span>5959</span>
+                                    </div>
+                                    <div class="item-basket__model">
+                                        <span>модель:</span>
+                                        <span><a href="#">IDEAL (KRUG & PRIESTER) 4850-95 EP</a></span>
+                                    </div>
+                                </div>
+                                <div class="item-basket__amount">
+                                    <input type="text" value="10">
+                                </div>
+                                <div class="item-basket__price">€3.244,75 EUR</div>
+                                <a href="#" class="item-basket__addinfo">Information about the Equipment</a>
+                                <div class="item-basket__remove"></div>
+                            </div>
+                            <div class="item-basket">
+                                <a href="#" class="item-basket__img">
+                                    <img src="img/product.jpg" alt="">
+                                </a>
+                                <div class="item-basket__info">
+                                    <a href="#" class="item-basket__name">Вибростол-сталкиватель для бумаги Polar RB 2</a>
+                                    <div class="item-basket__articul">
+                                        <span>АРТИКУЛ:</span>
+                                        <span>5959</span>
+                                    </div>
+                                    <div class="item-basket__model">
+                                        <span>модель:</span>
+                                        <span><a href="#">IDEAL (KRUG & PRIESTER) 4850-95 EP</a></span>
+                                    </div>
+                                </div>
+                                <div class="item-basket__amount">
+                                    <input type="text" value="10">
+                                </div>
+                                <div class="item-basket__price">€3.244,75 EUR</div>
+                                <a href="#" class="item-basket__addinfo">Information about the Equipment</a>
+                                <div class="item-basket__remove"></div>
+                            </div>
+                            <div class="item-basket">
+                                <a href="#" class="item-basket__img">
+                                    <img src="img/product.jpg" alt="">
+                                </a>
+                                <div class="item-basket__info">
+                                    <a href="#" class="item-basket__name">Вибростол-сталкиватель для бумаги Polar RB 2</a>
+                                    <div class="item-basket__articul">
+                                        <span>АРТИКУЛ:</span>
+                                        <span>5959</span>
+                                    </div>
+                                    <div class="item-basket__model">
+                                        <span>модель:</span>
+                                        <span><a href="#">IDEAL (KRUG & PRIESTER) 4850-95 EP</a></span>
+                                    </div>
+                                </div>
+                                <div class="item-basket__amount">
+                                    <input type="text" value="10">
+                                </div>
+                                <div class="item-basket__price">€3.244,75 EUR</div>
+                                <a href="#" class="item-basket__addinfo">Information about the Equipment</a>
+                                <div class="item-basket__remove"></div>
+                            </div>
+                        </div>
+                        <div class="list-basket__total">
+                            <span>В стоимость могут быть не включены транспортные расходы</span>
+                            <span>€6.489,50 EUR</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container">
+                    <div class="callback-form">
+                        <div class="callback-form__title">
+                            <span>Customer information</span>
+                            <div class="callback-form__auth">
+                                <a href="#">Авторизуйтесь</a>, чтобы не заполнять форму оформления запроса.
+                            </div>
+                        </div>
+                        <form class="callback-form__form">
+                            <div class="callback-form__main">
+                                <div class="callback-form__col">
+                                    <div class="pp-input">
+                                        <span>Name*</span>
+                                        <input type="text" placeholder="Vanya">
+                                    </div>
+                                    <div class="pp-input">
+                                        <span>City</span>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                                <div class="callback-form__col">
+                                    <div class="pp-input">
+                                        <span>Company</span>
+                                        <input type="text">
+                                    </div>
+                                    <div class="pp-input _error">
+                                        <span>Phone*</span>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                                <div class="callback-form__col">
+                                    <div class="pp-input">
+                                        <span>Country</span>
+                                        <input type="text">
+                                    </div>
+                                    <div class="pp-input _error">
+                                        <span>E-mail*</span>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                                <div class="callback-form__col _textarea">
+                                    <div class="pp-input">
+                                        <span>Additional Information</span>
+                                        <textarea "></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="callback-form__btm">
+                                <span>Нажимая на кнопку "Оформить запрос", вы даете <a href="#">согласие на обработку</a> своих персональных данных</span>
+                                <button class="pp-btn _red">Place Your order</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+
+        <!--footer-->
+        @@include('./components/common/_footer.html')
+
+    </div>
+    @@include('./components/common/scripts.html')
+</body>
+</html>

@@ -1,8 +1,42 @@
 .header {
-    background-color: rgba($color: #0a152f, $alpha: 0.7);
+    // background-color: rgba($color: #0a152f, $alpha: 0.7);
     height: 140px;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 10;
+
+    &__top {
+        height: 105px;
+        background-color: #0a152f;
+    }
+
+    &__nav {
+        height: 35px;
+        background-color: #030816;
+        color: $white_c;
+
+        .container {
+            @include flex_row;
+            align-items: center;
+        }
+    }
+}
+
+.header-menu-link {
+    cursor: pointer;
+    display: block;
+
+    & > span {
+        display: block;
+        line-height: 35px;
+        font-size: 16px;
+        text-transform: uppercase;
+        padding: 0 15px;
+    }
+
+    &._expand {
+
+    }
 }

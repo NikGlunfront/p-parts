@@ -32,6 +32,48 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         document.body.classList.add('_pc');
     }
+
+    const headerExpandBtns = document.querySelectorAll('.header-menu-link._expand')
+    const hiddenMenus = document.querySelectorAll('.hidden-menu')
+    const visibleMenuClass = "_visible"
+    const activeMenuBtnClass = "_active"
+
+    if (headerExpandBtns.length) {
+        headerExpandBtns.forEach(btn => {
+            let btnTitle = btn.querySelector('span')
+            let bckgCloser = btn.querySelector('.hidden-menu__bckg')
+            let hiddenMenu = btn.querySelector('.hidden-menu')
+            if (bckgCloser) {
+                bckgCloser.addEventListener('click', () => {
+                    hideAllMenus()
+                })
+            }
+            if (btnTitle) {
+                btnTitle.addEventListener('click', () => {
+                    hideAllMenus()
+                    toggleMenuVisible(btn)
+                })
+            }
+        })
+    }
+
+    function toggleMenuVisible(menuBtn) {
+        const hiddenMenu = menuBtn.querySelector('.hidden-menu')
+        hiddenMenu.classList.toggle(visibleMenuClass)
+        const btnContainer = menuBtn.closest('._expand')
+        btnContainer.classList.toggle(activeMenuBtnClass)
+    }
+
+    function hideAllMenus() {
+        hiddenMenus.forEach(menu => {
+            menu.classList.remove(visibleMenuClass)
+        })
+        headerExpandBtns.forEach(menu => {
+            const btnContainer = menu.closest('._expand')
+            btnContainer.classList.remove(activeMenuBtnClass)
+            menu.classList.remove(activeMenuBtnClass)
+        })
+    }
 });
 
 

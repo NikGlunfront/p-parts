@@ -121,10 +121,11 @@ div.pp-btn {
     line-height: 38px;
     min-width: 90px;
     padding: 0 15px;
-    border-radius: 5px;
+    border-radius: 8px;
     border: 1px solid $teal_c;
     color: $teal_c;
     text-align: center;
+    white-space: nowrap;
     
     &._red {
         border: 1px solid $red_c;
@@ -151,15 +152,46 @@ div.pp-btn {
             margin-right: 10px;
         }
     }
+
+    &._askprice {
+        line-height: 48px;
+        font-size: 19px;
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-image: url('../../img/icons/ask-price.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin-right: 10px;
+        }
+    }
+
+    &._filter {
+        line-height: 48px;
+        font-size: 19px;
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 26px;
+            height: 26px;
+            background-image: url('../../img/icons/filter-white.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin-right: 10px;
+            transform: translate(0, 2px);
+        }
+    }
 }
 
 .page-title {
     font-size: 38px;
     font-weight: 700;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 
     @include mq(992) {
-        margin-bottom: 40px;
+        margin-bottom: 30px;
         font-size: 28px;
     }
 }
@@ -191,5 +223,161 @@ div.pp-btn {
         span {
             color: #a19d9d;
         }
+    }
+}
+
+.checkbox-input {
+    position: relative;
+    flex: 0 0 100%;
+    display: block;
+    padding: 0 0 0 35px;
+    font-size: 19px;
+    line-height: 1.1;
+    cursor: pointer;
+
+    &__input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+
+        &:checked ~.checkbox-input__checkmark {
+            background-color: #5d5d64;
+            
+            &::after {
+                display: block;
+            }
+        }
+    }
+
+    span {
+        &._num {
+            color: $teal_c;
+            display: inline-block;
+            margin-left: 5px;
+            font-size: 13px;
+            position: relative;
+            top: -6px;
+        }
+    }
+
+    &__checkmark {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: transparent;
+        border: 1px solid #5d5d64;
+        transform: translate(0, -50%);
+        transition: all .3s linear;
+
+        &::after {
+            content: "";
+            position: absolute;
+            display: none;
+            left: 36%;
+            top: 16%;
+            width: 5px;
+            height: 10px;
+            border: solid #fff;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+            transition: all .3s linear;
+        }
+    }
+}
+.filters-catalog-item {
+
+    &__filter-option {
+    }
+}
+
+.hidden-menu {
+    position: fixed;
+    top: 140px;
+    left: 0;
+    width: 100%;
+    color: $black_c;
+    height: calc(100% - 140px);
+    @include flex_col;
+    display: none;
+
+    &._visible {
+        display: flex;
+    }
+
+    &__list {
+        height: 100%;
+        width: 450px;
+        max-width: 50%;
+        position: relative;
+        z-index: 2;
+        & > ul {
+            height: 100%;
+            background-color: #e2e8ec;
+            padding: 35px 0;
+            height: 100%;
+            overflow-y: auto;
+            @include scrollBarStyle;
+        }
+    }
+
+    &__item {
+        border-bottom: 2px solid transparent;
+        transition: $transition;
+
+        @include hover {
+            border-color: $teal_c;
+            .hidden-menu__sublist {
+                display: block;
+            }
+
+            & > a {
+                font-weight: 500;
+            }
+        }
+        & > a {
+            display: block;
+            text-align: end;
+            padding: 10px 35px;
+        }
+    }
+
+    &__sublist {
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 400px;
+        height: 100%;
+        background: $white_c;
+        display: none;
+
+        & > ul {
+            height: 100%;
+            overflow-y: auto;
+            @include scrollBarStyle;
+            padding: 35px 0;
+        }
+    }
+
+    &__subitem {
+        display: block;
+        padding: 10px 35px;
+
+        @include hover {
+            background-color: rgba($color: $teal_c, $alpha: 0.1);
+        }
+    }
+
+    &__bckg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        background-color: rgba($color: #000000, $alpha: 0.5);
     }
 }
